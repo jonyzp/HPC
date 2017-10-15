@@ -9,12 +9,15 @@ El reto a afrontar es el clustering de un conjunto de documentos utilizando el a
 
 A continuación una tabla de tiempos mostrando las diferentes implementaciones vs. los datasets que probamos
 
-| __Tabla de Tiempos__ | __Gutenberg__ | __Dado por el artículo__
+| __Tabla de Tiempos__ | __Archivos Locales__ | __Gutenberg__ 
 | :-----------:     | :------: | :------: |
-| Serial         | 16 seg   | t
-| Paralelo Distribuído  | t   | t
+| Serial         |  0.017442941665649414 seg   | +2h
+| Paralelo Distribuído  | 0.011871099472045898   | +1h
 
 ### Documentación de Usuario
+
+##### Requisitos
+* Tener instalado Python 2.7 y mpi4py (`pip install mpi4py`)
 
 Para cambiar la k diríjase** al código en el main en la línea 110 (sujeto a cambios), ahí está la k explícita
 
@@ -29,13 +32,15 @@ Para ejecutar el código paralelo:
 ### Referencias:
 
 * [Algoritmo Jaccard] https://en.wikipedia.org/wiki/Jaccard_index
+* [Deep Jaccard Documentation] http://www.iaeng.org/publication/IMECS2013/IMECS2013_pp380-384.pdf
 * [Dataset Gutenberg] https://drive.google.com/uc?id=0B_4oKjh0Qca5RWlGZkRRT1pVLU0&export=download
 
 ## Código de Honor
 
 En este projecto reconocemos los créditos y autoría de componentes reutilizados de otros proyectos a nivel de código fuente,
-documentación (correcta citación), diseños o algoritmos.
+documentación (correcta citación), diseños o algoritmos. Este algoritmo se diseñó en colaboración con otros compañeros de la materia.
 
 Yo, Jonathan Zapata, reconozco que el trabajo es auténtico, original, no copiado, no enviado a realizar por un tercero, y reconozco a los terceros que aportaron al proyecto directa o indirectamente.
+Yo, Mauricio Hoyos, reconozco que el trabajo es auténtico, original, no copiado, no enviado a realizar por un tercero, y reconozco a los terceros que aportaron al proyecto directa o indirectamente.
 
 
