@@ -143,12 +143,9 @@ def preJaccard(fdt):
 
     return matrixC
 
-
 def jaccard_similarity(x, y):
-    intersection_cardinality = len(set.intersection(*[set(x), set(y)]))
-    # print(intersection_cardinality)
-    union_cardinality = len(set.union(*[set(x), set(y)]))
-    # print(list(set.union(*[set(x), set(y)])))
+    intersection_cardinality = len(set(x).intersection(set(y)))
+    union_cardinality = len(set(x).union(set(y)))
     return intersection_cardinality / float(union_cardinality)
 
 
@@ -172,7 +169,7 @@ def kMeans2(X, K, maxIters=10, plot_progress=None):
         while centroids[0][0] == centroids[1][0]:
             centroids = X[np.random.choice(np.arange(len(X)), K), :]
         #while centroids[0]:
-    print ("Centroides",centroids)
+    #print ("Centroides",centroids)
             
     C = []
     for i in range(maxIters):
@@ -200,38 +197,14 @@ def kMeans2(X, K, maxIters=10, plot_progress=None):
         centroids = centroidesTemp
     return np.array(centroids), C
 
-
-'''
-def show(X, C, centroids, keep = False):
-    import time
-    time.sleep(0.5)
-    plt.cla()
-    plt.plot(X[C == 0, 0], X[C == 0, 1], '*b',
-         X[C == 1, 0], X[C == 1, 1], '*r',
-         X[C == 2, 0], X[C == 2, 1], '*g')
-    plt.plot(centroids[:,0],centroids[:,1],'*m',markersize=20)
-    plt.draw()
-    if keep :
-        plt.ioff()
-        plt.show()
-'''
-
 if __name__ == '__main__':
     timeini = time.time()
-    k = 3
+    k = 2
     rootDir = sys.argv[1]
     T = getT(rootDir)
     fdt = ft(T)
-    #print("FDT: ", fdt)
-    print(time.time()-timeini)
-
     matrizJaccard = preJaccard(fdt)
-    print("matrizJaccard ",matrizJaccard)
-
     centroides, finalList = kMeans2(matrizJaccard, k)
-    print("Tiempo final: ", time.time() - timeini)
-    #print("Centroides: ", centroides)
-    #print("Lista", finalList)
     listaFiles = list(fdt.keys())
     clusters = []
     for i in range(len(centroides)):
@@ -239,7 +212,6 @@ if __name__ == '__main__':
 
     for i in range(len(listaFiles)):
         clusters[int(finalList[i])].append(listaFiles[i])
-
+    print("Tiempo transcurrido: ", time.time() - timeini)
     for i in range(len(clusters)):
         print("cluster ",i,":",clusters[i])
-    # show(matrizJaccard, finalList, centroides, True)
