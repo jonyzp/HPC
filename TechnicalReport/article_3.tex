@@ -11,6 +11,10 @@
 % With extensive modifications by:
 % Vel (vel@latextemplates.com)
 %
+% Authors:
+% Mauricio Hoyos Ardila mhoyosa2@eafit.edu.co
+% Jonathan Zapata Castaño jzapat80@eafit.edu.co
+%
 % License:
 % CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
 %
@@ -37,7 +41,7 @@
 %	COLORS
 %----------------------------------------------------------------------------------------
 
-\definecolor{color1}{RGB}{0,0,90} % Color of the article title and sections
+\definecolor{color1}{RGB}{0,0,0} % Color of the article title and sections
 \definecolor{color2}{RGB}{0,20,20} % Color of the boxes behind the abstract and headings
 
 %----------------------------------------------------------------------------------------
@@ -51,24 +55,25 @@
 %	ARTICLE INFORMATION
 %----------------------------------------------------------------------------------------
 
-\JournalInfo{Journal, Vol. XXI, No. 1, 1-5, 2013} % Journal information
-\Archive{Additional note} % Additional notes (e.g. copyright, DOI, review/research article)
+\JournalInfo{Reporte Técnico, No. 1, 2017} % Journal information
+\Archive{Universidad EAFIT} % Additional notes (e.g. copyright, DOI, review/research article)
 
-\PaperTitle{Article Title} % Article title
+\PaperTitle{Agrupamiento de Documentos usando K-means} % Article title
 
-\Authors{John Smith\textsuperscript{1}*, James Smith\textsuperscript{2}} % Authors
-\affiliation{\textsuperscript{1}\textit{Department of Biology, University of Examples, London, United Kingdom}} % Author affiliation
-\affiliation{\textsuperscript{2}\textit{Department of Chemistry, University of Examples, London, United Kingdom}} % Author affiliation
-\affiliation{*\textbf{Corresponding author}: john@smith.com} % Corresponding author
+\Authors{Mauricio Hoyos\textsuperscript{1}, Jonathan Zapata\textsuperscript{2}} % Authors
+\affiliation{\textsuperscript{1}\textit{Departamento de Ingeniería de Sistemas, Universidad EAFIT, Medellín, Colombia, } \textbf{mhoyosa2@eafit.edu.co}} % Author affiliation
+\affiliation{\textsuperscript{2}\textit{Departamento de Ingeniería de Sistemas, Universidad EAFIT, Medellín, Colombia, } \textbf{jzapat80@eafit.edu.co}} % Author affiliation
 
-\Keywords{Keyword1 --- Keyword2 --- Keyword3} % Keywords - if you don't want any simply remove all the text between the curly brackets
+\Keywords{K-means --- Jacard --- MPI --- Cluster --- HPC } % Keywords 
+
 \newcommand{\keywordname}{Keywords} % Defines the keywords heading name
 
 %----------------------------------------------------------------------------------------
 %	ABSTRACT
 %----------------------------------------------------------------------------------------
 
-\Abstract{\lipsum[1]~}
+\Abstract{Text mining is an analysis technique which has allowed us to implement a set of new applications at the day. Such as search engines in the web (Google, Facebook, Amazon, Spotify, Netflix, among others), suggestions systems, natural language processing.
+The document clustering techniques enable us to link a document with other similar documents according to a comparison metric.}
 
 %----------------------------------------------------------------------------------------
 
@@ -86,11 +91,13 @@
 %	ARTICLE CONTENTS
 %----------------------------------------------------------------------------------------
 
-\section*{Introduction} % The \section*{} command stops section numbering
+\section*{Introducción} % The \section*{} command stops section numbering
 
-\addcontentsline{toc}{section}{Introduction} % Adds this section to the table of contents
+\addcontentsline{toc}{section}{Introducción} % Adds this section to the table of contents
 
-\lipsum[1-3] % Dummy text
+Actualmente, debido a la gran cantidad de información que se encuentra en los medios, surge la necesidad de agrupar dicha información en un conjunto de datos que permita realizar búsquedas más rápidas, para ello se  crearon técnicas que permiten calcular la similitud que tienen dos textos, una de las más utilizadas es la minería de datos, la cual, como su nombre lo indica, se encarga de extraer las partes importantes de un archivo (en nuestro caso un texto), el enfoque que le dimos al proyecto está delimitado precisamente por esta área de la ciencia de datos, la cual nos va a permitir crear varios set de documentos y determinar el número de sets apropiados que deberíamos generar.
+La técnica de agrupamiento de documentos 
+Something
  and some mathematics $\cos\pi=-1$ and $\alpha$ in the text\footnote{And some mathematics $\cos\pi=-1$ and $\alpha$ in the text.}.
 
 %------------------------------------------------
