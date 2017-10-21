@@ -18,6 +18,9 @@ A continuación una tabla de tiempos mostrando las diferentes implementaciones v
 
 ##### Requisitos
 * Tener instalado Python 2.7 y mpi4py (`pip install mpi4py`)
+* Tener un dataset: https://drive.google.com/file/d/0B2Mzhc7popBga2RkcWZNcjlRTGM/edit
+* Copiar el dataset desde la maquina local al DCA:
+`pscp C:\Users\MauricioHoyosArdila\Downloads\Gutenberg.zip jzapat80@192.168.10.115:/home/jzapat80`
 
 Para cambiar la k diríjase** al código en el main en la línea 110 (sujeto a cambios), ahí está la k explícita
 

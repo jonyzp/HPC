@@ -58,13 +58,13 @@
 \JournalInfo{Reporte Técnico, No. 1, 2017} % Journal information
 \Archive{Universidad EAFIT} % Additional notes (e.g. copyright, DOI, review/research article)
 
-\PaperTitle{Agrupamiento de Documentos usando K-means} % Article title
+\PaperTitle{Clústering de Documentos a partir de Métricas de Similitud} % Article title
 
 \Authors{Mauricio Hoyos\textsuperscript{1}, Jonathan Zapata\textsuperscript{2}} % Authors
 \affiliation{\textsuperscript{1}\textit{Departamento de Ingeniería de Sistemas, Universidad EAFIT, Medellín, Colombia, } \textbf{mhoyosa2@eafit.edu.co}} % Author affiliation
 \affiliation{\textsuperscript{2}\textit{Departamento de Ingeniería de Sistemas, Universidad EAFIT, Medellín, Colombia, } \textbf{jzapat80@eafit.edu.co}} % Author affiliation
 
-\Keywords{K-means --- Jacard --- MPI --- Cluster --- HPC } % Keywords 
+\Keywords{K-means --- Jacard --- MPI --- Cluster --- HPC --- Paralelización --- Particionamiento por dominio --- Similitud } % Keywords 
 
 \newcommand{\keywordname}{Keywords} % Defines the keywords heading name
 
@@ -72,8 +72,9 @@
 %	ABSTRACT
 %----------------------------------------------------------------------------------------
 
-\Abstract{Text mining is an analysis technique which has allowed us to implement a set of new applications at the day. Such as search engines in the web (Google, Facebook, Amazon, Spotify, Netflix, among others), suggestions systems, natural language processing.
-The document clustering techniques enable us to link a document with other similar documents according to a comparison metric.}
+\Abstract{Text mining is an analysis technique which has allowed us to implement a set of new applications through the time. Such as search engines in the web (Google, Facebook, Amazon, Spotify, Netflix, among others), suggestions systems, natural language processing and others.
+The document clustering techniques enable us to link a document with other similar documents according to a comparison metric.
+The basic idea of the proposed implementations is to compare the efficiency between computing in a single node and computing in a distributed network of nodes.}
 
 %----------------------------------------------------------------------------------------
 
@@ -95,10 +96,10 @@ The document clustering techniques enable us to link a document with other simil
 
 \addcontentsline{toc}{section}{Introducción} % Adds this section to the table of contents
 
-Actualmente, debido a la gran cantidad de información que se encuentra en los medios, surge la necesidad de agrupar dicha información en un conjunto de datos que permita realizar búsquedas más rápidas, para ello se  crearon técnicas que permiten calcular la similitud que tienen dos textos, una de las más utilizadas es la minería de datos, la cual, como su nombre lo indica, se encarga de extraer las partes importantes de un archivo (en nuestro caso un texto), el enfoque que le dimos al proyecto está delimitado precisamente por esta área de la ciencia de datos, la cual nos va a permitir crear varios set de documentos y determinar el número de sets apropiados que deberíamos generar.
-La técnica de agrupamiento de documentos 
+Actualmente, debido a la gran cantidad de información que se encuentra en los medios, y a que está alojada en diferentes bases de datos, surge la necesidad de agrupar dicha información en un conjunto de datos que permita realizar búsquedas más rápidas, para ello se  crearon técnicas que permiten calcular la similitud que tienen dos textos; una de las más utilizadas es la minería de datos, la cual, como su nombre lo indica, se encarga de extraer las partes importantes de un archivo (en nuestro caso un texto). El enfoque que le dimos al proyecto está delimitado precisamente por esta área de la ciencia de datos, la cual nos va a permitir crear varios set de documentos y determinar el número de sets apropiados para agrupar la información, esto gracias a diferentes experimentos, además de generar un informe detallado evaluando el contraste de compartamientos entre el tiempo de ejecución del programa en serial y el paralelo con diferentes datasets.
 
- and some mathematics $\cos\pi=-1$ and $\alpha$ in the text\footnote{And some mathematics $\cos\pi=-1$ and $\alpha$ in the text.}.
+En este caso, decidimos hacer que la agrupación de documentos sea mediante el uso de los algoritmos k-means y Jaccard, estos son el principal soporte para determinar la similitud entre documentos.
+ 
 
 %------------------------------------------------
 
