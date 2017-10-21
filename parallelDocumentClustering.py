@@ -217,8 +217,6 @@ if __name__ == '__main__':
                 propiosKArr = matrizFinal[truefalseArr]
                 promedioArr = propiosKArr.mean(axis=0)
                 centroidesTemp[i]=list(promedioArr)                
-            else:
-                centroidesTemp[i].append(cent[i])
 
         recibZ = comm.gather(centroidesTemp,root)
         centroidesFinales = []
