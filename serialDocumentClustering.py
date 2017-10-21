@@ -166,7 +166,7 @@ def kMeans2(X, K, maxIters=10, plot_progress=None):
 
 if __name__ == '__main__':
     timeini = time.time()
-    k = 2
+    k = 4
     rootDir = sys.argv[1]
     T = getT(rootDir)
     fdt = ft(T)
