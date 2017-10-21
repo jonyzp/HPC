@@ -117,7 +117,7 @@ def printResults(listaFiles, z, numerodecentroides):
 
 if __name__ == '__main__':
     iniTime = time.time()
-    k = 2 # El numero de clusters a sacar
+    k = 4 # El numero de clusters a sacar
     maxIters = 10
     rootDir = sys.argv[1]
     fileList = []
