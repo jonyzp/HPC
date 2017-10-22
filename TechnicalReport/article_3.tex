@@ -114,9 +114,34 @@ En este caso, decidimos hacer que la agrupación de documentos sea mediante el u
 
 
 \begin{description}
-	\item[Document Clustering] Is the act of collecting similar documents into bins, where similarity is some function on a document. \ref{refer:1}
-	\item[K-means Algorithm] Explanation
-	\item[Jaccard Algorithm] Text \ref{refer:1}
+	\item[K-means Algorithm] “The k-means method has been shown to be effective in producing good clustering results for many practical applications. However, a direct algorithm of k-means method requires time proportional to the product of number of patterns and number of clusters per iteration. This is computationally very expensive especially for large datasets.
+	The number of iterations required can vary in a wide range from a few to several thousand depending on the number of patterns, number of clusters, and the input data distribution. Thus, a direct implementation of the k-means method can be computationally very intensive. This is especially true for typical data mining applications with large number of pattern vectors” \cite{K-means}. 
+	
+	The algorithm is composed of the following steps:
+	Place K points into the space represented by the objects that are being clustered. These points represent initial group centroids.
+	
+	
+	Assign each object to the group that has the closest centroid.
+	
+	
+	When all objects have been assigned, recalculate the positions of the K centroids.
+	
+	
+	Repeat Steps 2 and 3 until the centroids no longer move. This produces a separation of the objects into groups from which the metric to be minimized can be calculated.
+	
+	figura sacada del mismo paper. \cite{K-means Algorithm}
+	The number of K is determinate by the user and indicate the number of clusters.
+	
+	\item[Jaccard Algorithm] 
+	“This is a particular notion of ‘similarity’: the similarity of sets by looking at the relative size of their intersection.
+	The Jaccard similarity of sets S and T is |S instersected T |/|S union T |, that is, the ratio of the size of the intersection of S and T to the size of their union. We shall denote the Jaccard similarity of S and T by SIM(S, T ).  An important class of problems that Jaccard similarity addresses well is that of finding textually similar documents in a large corpus such as the Web or a collection of news articles. We should understand that the aspect of similarity we are looking at here is character-level similarity, not “similar meaning,” which requires us to examine the words in the documents and their uses.” \cite{jaccard_similarity}. 
+	“To calculate the Jaccard dissimilarity the Jaccard similarity matrix is computed first and thereafter transformed.”\cite{jaccard_seudo}
+	This can be reach following this steps:
+	Count the number of members which are shared between both sets.
+	Count the total number of members in both sets (shared and un-shared).
+	Divide the number of shared members by the total number of members.
+	Multiply the number you found in by 100. \cite{jaccard_steps}
+	
 \end{description}
 
 %\begin{itemize}[noitemsep] % [noitemsep] removes whitespace between the items for a compact look
@@ -214,27 +239,33 @@ Se puede evidenciar la diferencia entre ejecutar el algoritmo de forma paralela 
 %----------------------------------------------------------------------------------------
 %	REFERENCE LIST
 %----------------------------------------------------------------------------------------
-\phantomsection
-\bibliographystyle{unsrt}
-%\bibliography{sample}
 
-\begin{itemize}[noitemsep] % [noitemsep] removes whitespace between the items for a compact look
-	\item DISEÑO DE ALGORITMOS PARALELOS
-	En el texto: (cs.buap, 2017)
-	Bibliografía: cs.buap. (2017). Diseño de algoritmos paralelos. 
-	
-	[online] Available at: https://www.cs.buap.mx/~mtovar/doc/ProgConc/ProgramacionParalela.pdf 
-	
-	[Accessed 21 Oct. 2017].
-	\item cs.fit.edu. (2017). \textit{A Comparison of Document Clustering Techniques.} [online] Available at: http://cs.fit.edu/~pkc/classes/ml-internet/papers/steinbach00tr.pdf [Accessed 18 Oct. 2017].
-	\label{refer:1}
-\end{itemize}
 
 \begin{thebibliography}{9}
+
+\bibitem{K-means}
+Alsabti, K., Ranka, S. and Singh, V. (2017). An Efficient K-Means Clustering Algorithm. [online] pp.1-2. \href{https://www.cs.utexas.edu/~kuipers/readings/Alsabti-hpdm-98.pdf}{Available clicking here} [Accessed 22 Oct. 2017].
+\bibitem{K-means Algorithm}
+Home.deib.polimi.it. (2017). Clustering - K-means. [online] \href{http://home.deib.polimi.it/matteucc/Clustering/tutorial_html/kmeans.html}{Available clicking here} [Accessed 22 Oct. 2017].
+
 
 \bibitem{jaccard_seudo}
 Schulz, D. (2017). Jaccard similarity. [online] Code10.info. 
 \href{http://www.code10.info/index.php?option=com_content&view=article&id=60:articlejaccard-similarity&catid=38:cat_coding_algorithms_data-similarity&Itemid=57}{Available clicking here} [Accessed 22 Oct. 2017].
+
+\bibitem{jaccard_similarity} 
+
+Standford University Infolab. (2017). \textit{Finding Similar Items}. [online] \href{http://infolab.stanford.edu/~ullman/mmds/ch3.pdf}{Available clicking here} [Accessed 22 Oct. 2017].
+
+\bibitem{jaccard_steps} 
+Statistics How To. (2017). Jaccard Index / Similarity Coefficient. [online] [Accessed 22 Oct. 2017].
+\href{http://www.statisticshowto.com/jaccard-index/}{Available clicking here}  [Accessed 22 Oct. 2017].
+
+
+\bibitem{DISENO DE ALGORITMOS PARALELOS}
+En el texto: (cs.buap, 2017)
+Bibliografía: cs.buap. (2017). Diseño de algoritmos paralelos. [online] \href{https://www.cs.buap.mx/~mtovar/doc/ProgConc/ProgramacionParalela.pdf}{Available clicking here} [Accessed 21 Oct. 2017].
+\item cs.fit.edu. (2017). \textit{A Comparison of Document Clustering Techniques.} [online]  \href{http://cs.fit.edu/~pkc/classes/ml-internet/papers/steinbach00tr.pdf}{Available clicking here} [Accessed 18 Oct. 2017].
 
 \end{thebibliography}
 
