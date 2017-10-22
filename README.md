@@ -27,10 +27,10 @@ Para cambiar la k diríjase** al código en el main en la línea 110 (sujeto a c
 ** Tenga en cuenta que esta es una aplicación no interactiva, ya que lo que se requiere es poder usarla en un clúster MPI, por lo que para hacer cambios a la k debe hacerse de esta manera.
 
 Para ejecutar el código serial:
-`python ./serial <folder con archivos>`
+`python ./serialDocumentClustering.py <folder con archivos>`
 
 Para ejecutar el código paralelo:
-`mpiexec -np <numero de nucleos en su maquina> python ./parallel <folder con archivos>`
+`mpiexec -np <numero de nucleos en su maquina> python ./parallelDocumentClustering.py <folder con archivos>`
 
 ### Referencias:
 
