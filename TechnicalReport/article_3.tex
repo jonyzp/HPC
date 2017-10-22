@@ -192,7 +192,9 @@ La implementación de esta practica fue realizada en python ya que es un lenguaj
 Para la implementacíon del codigo serial se utilizaron algunas bibliotecas como operator, os y sys que nos permitieron realizar operaciones como lectura de ficheros, manejo de argumentos y brindar caracteristicas para el ordenamiento de alguas estructuras de datos, tambien se empleo numpy como un soporte para las estructuras de datos necesarias para la matriz que contenia todas las distancias entre documentos.
 Para la implementación del algoritmo en paralelo se emplearon las librerias anterior mente mencionadas, pero además se empleó la biblioteca mpi4py que es la implementacion de Message Passing Interface para python, dicha biblioteca facilita todo el proceso de mensajeria que se requiere entre nodos para cumplir con el proceso de aglomeración y comunicación.
 
-A continuación compartimos nuestra implementación alojada en Github, en la cual basamos el análisis presentado en este estudio: \href{https://github.com/jonyzp/HPC}{Repositorio de Github}
+Es importante recalcar que la implementación del algoritmo en paralelo fue diseñada y desarrollada con el fin de que no se dependiera de una estructura expecifica del hardware y que se pudiera correr dependiendo del nuemero de nodos especificados por el programador/usuario al correrlo. 
+
+A continuación compartimos nuestra implementación alojada en Github, en la cual basamos el análisis presentado en este estudio; al interior de este ling podra encontrar un Readme.md con todas las instrucciones necesarias por poder correr satisfactoriamente los diferentes algoritmos: \href{https://github.com/jonyzp/HPC}{Repositorio de Github}
 
 \section{Análisis de resultados (secuencial vs. paralelo)}
 
