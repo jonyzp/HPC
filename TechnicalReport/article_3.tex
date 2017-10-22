@@ -158,142 +158,7 @@ Los algoritmos que usamos están descritos en el marco teórico, pues son técni
 Las estructuras de datos que usamos son las fundamentales (int, bool, char[], matrices, etc), diccionarios y listas.
 En cuanto al rendimiento análitico de la solución se puede encontrar que es de orden cúbico.
 
-El diseño del algoritmo Jaccard que usamos fue el siguiente:
-
-"
-Function dist_JaccardSimilarity (InputMatrix : t2dVariantArrayDouble; aZeroThresh: Double; Var OutputMatrix : t2dVariantArrayDouble) : Boolean;
-// The function dist_JaccardSimilarity calculates the Jaccard similarity between
-// several cases based on binary values (e.g. presences/absences or TRUE/FALSE).
-// The variable aZeroThresh defines the minumum value, that is required to
-// interpret a variable as being logically TRUE.
-// The cases are expected in the rows. The variables are expected
-// in the columns. Function returns FALSE if at least one cell can not be
-// calculated. The result matrix is returned in OutputMatrix.
-// (c) Dr. Jan Schulz, 05.May 2008; www.code10.info
-Var  OutputMatrixSize : Integer;
-     InputCols        : Integer;
-     InputRows        : Integer;
-     RunnerY          : Integer;
-     RunnerX          : Integer;
-     J01              : Integer;
-     J10              : Integer;
-     J11              : Integer;
-     i                : Integer;
-     Denominator      : Integer;
-     Quotient         : Double;
-     FirstVal         : Boolean;
-     SecondVal        : Boolean;
-Begin
-  // if one dimension is zero or matrix not rectangular
-  If Not mtx_IsRectangular (InputMatrix, InputRows, InputCols) THen
-  Begin
-    //create an empty matrix, return FALSE and exit
-    mtx_Create (OutputMatrix, 1, 1, 0, 'Erroneous Jaccard similarity matrix');
-    dist_JaccardSimilarity := False;
-    Exit;
-  end;
-
-  // Threshold for binary level needs to be positive
-  aZeroThresh := Abs (aZeroThresh);
-
-  // let's expect the best case ...
-  dist_JaccardSimilarity := True;
-
-  // define and set the row dimension of the result matrix
-  OutputMatrixSize := High (InputMatrix.Cells) + 1;
-  SetLength (OutputMatrix.Cells, OutputMatrixSize);
-
-  // create the column dimension of the array
-  For RunnerY := Low (OutputMatrix.Cells) to High (Outputmatrix.Cells) do
-  Begin
-    SetLength (OutputMatrix.Cells [RunnerY], OutputMatrixSize);
-  end;
-
-  // define title of matrix
-  OutputMatrix.MatrixName := 'Jaccard similarity matrix';
-
-   // Set Row/Col-Title for the new matrix
-  SetLength (OutputMatrix.RowTitle, OutputMatrixSize);
-  SetLength (OutPutMatrix.ColTitle, OutPutMatrixSize);
-
-  For RunnerY := Low (InputMatrix.RowTitle) to High (InputMatrix.RowTitle) do
-  Begin
-    // names for rows and columns are the same in this triangualary matrix
-    OutputMatrix.RowTitle [RunnerY] := InputMatrix.RowTitle [RunnerY];
-    OutputMatrix.ColTitle [RunnerY] := InputMatrix.RowTitle [RunnerY];
-  end;
-
-
-  // compare every object
-  For RunnerY := Low (OutputMatrix.Cells) to High (OutputMatrix.Cells) do
-  Begin
-    //with every other object
-    For RunnerX := Low (OutputMatrix.Cells) to RunnerY do
-    Begin
-      J01 := 0;
-      J10 := 0;
-      J11 := 0;
-
-      //include all variables in analysis
-      For i := 0 to High (InputMatrix.Cells [0]) do
-      Begin
-        // directly convert to binary variables
-        FirstVal  := Abs (InputMatrix.Cells [RunnerX, i]) > aZeroThresh;
-        SecondVal := Abs (InputMatrix.Cells [RunnerY, i]) > aZeroThresh;
-
-        If FirstVal And SecondVal THen
-        Begin
-          J11 := J11 + 1;
-        end
-        Else
-        Begin
-          If FirstVal Then J10 := J10 + 1;
-          If SecondVal Then J01 := J01 + 1;
-        end;
-      end;
-
-      Denominator := J01 + J10 + J11;
-      If Denominator > 0 THen Quotient := J11 / Denominator
-                         Else
-                         Begin
-                           Quotient := NaN;
-                           dist_JaccardSimilarity := False;
-                         end;
-
-      // set the calculated value on both sides of diagonal and diagonal itself
-      OutputMatrix.Cells [RunnerX, RunnerY] := Quotient;
-      OutputMatrix.Cells [RunnerY, RunnerX] := Quotient;
-    end;
-  end;
-end;
-
-
-Function dist_JaccardDissimilarity (InputMatrix : t2dVariantArrayDouble; aZeroThresh: Double; Var OutputMatrix : t2dVariantArrayDouble) : Boolean;
-// The function dist_JaccardDissimilarity calculates the Jaccard dissimilarity
-// matrix between several cases, which are expected in the rows. The variables are
-// expected in the columns. Function returns FALSE if at least one cell can not be
-// calculated. The result matrix is returned in OutputMatrix. This function depends
-// on the function CalcCanberraDissimilarityMatrix
-// (c) Dr. Jan Schulz, 05.May 2008; www.code10.info
-Var RunnerX : Integer;
-    RunnerY : Integer;
-Begin
-  // calculate the Canberra Dissimilarity matrix
-  Result := dist_JaccardSimilarity (InputMatrix, aZeroThresh, OutputMatrix);
-
-  // convert the similarity into a dissimilarity matrix
-  For RunnerY := Low (OutputMatrix.Cells) to High (OutputMatrix.Cells) do
-  Begin
-    For RunnerX := Low (OutputMatrix.Cells [RunnerY]) to High (OutputMatrix.Cells [RunnerY]) do
-    Begin
-      OutPutMatrix.Cells [RunnerY, RunnerX] := 1 - OutPutMatrix.Cells [RunnerY, RunnerX];
-    end;
-  end;
-
-  If Result THen OutputMatrix.MatrixName := 'Jaccard dissimilarity matrix'
-            Else OutputMatrix.MatrixName := 'Erroneous Jaccard dissimilarity matrix';
-end;
-" \cite{jaccard_seudo}. 
+El diseño del algoritmo Jaccard que usamos lo sacamos de este sitio \cite{jaccard_seudo}. 
 
 \section{Implementación}
 
@@ -368,9 +233,18 @@ Se puede evidenciar la diferencia entre ejecutar el algoritmo de forma paralela 
 \begin{thebibliography}{9}
 
 \bibitem{jaccard_seudo}
-Schulz, D. (2017). Jaccard similarity. [online] Code10.info. Available at: \\\texttt{http://www.code10.info/index.php?option=com_content&view=article&id=60:articlejaccard-similarity&catid=38:cat_coding_algorithms_data-similarity&Itemid=57} [Accessed 22 Oct. 2017].
+Schulz, D. (2017). Jaccard similarity. [online] Code10.info. 
+\href{http://www.code10.info/index.php?option=com_content&view=article&id=60:articlejaccard-similarity&catid=38:cat_coding_algorithms_data-similarity&Itemid=57}{Available clicking here} [Accessed 22 Oct. 2017].
+
 \end{thebibliography}
 
 %----------------------------------------------------------------------------------------
+
+
+% no BORRAR:
+%\begin{verbatim}
+%CODE HERE
+%\end{verbatim}
+
 
 \end{document}
