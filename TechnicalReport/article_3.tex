@@ -188,6 +188,9 @@ En cuanto al rendimiento análitico de la solución se puede encontrar que es de
 El diseño del algoritmo Jaccard que usamos lo sacamos de este sitio \cite{jaccard_seudo}. 
 
 \section{Implementación}
+La implementación de esta practica fue realizada en python ya que es un lenguaje de programación muy sencillo de utilizar pero principalmente por que los modulos de MPI son de facil instalación y utilización.
+Para la implementacíon del codigo serial se utilizaron algunas bibliotecas como operator, os y sys que nos permitieron realizar operaciones como lectura de ficheros, manejo de argumentos y brindar caracteristicas para el ordenamiento de alguas estructuras de datos, tambien se empleo numpy como un soporte para las estructuras de datos necesarias para la matriz que contenia todas las distancias entre documentos.
+Para la implementación del algoritmo en paralelo se emplearon las librerias anterior mente mencionadas, pero además se empleó la biblioteca mpi4py que es la implementacion de Message Passing Interface para python, dicha biblioteca facilita todo el proceso de mensajeria que se requiere entre nodos para cumplir con el proceso de aglomeración y comunicación.
 
 A continuación compartimos nuestra implementación alojada en Github, en la cual basamos el análisis presentado en este estudio: \href{https://github.com/jonyzp/HPC}{Repositorio de Github}
 
