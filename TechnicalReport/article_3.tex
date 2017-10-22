@@ -142,7 +142,14 @@ En este caso, decidimos hacer que la agrupación de documentos sea mediante el u
 	Divide the number of shared members by the total number of members.
 	Multiply the number you found in by 100. \cite{jaccard_steps}
 	
+	\item[Document Clustering] Is the act of collecting similar documents in sets. “Document clustering involves the use of descriptors and descriptor extraction. Descriptors are sets of words that describe the contents within the cluster. Document clustering is generally considered to be a centralized process. Examples of document clustering include web document clustering for search users.
+	A web search engine often returns thousands of pages in response to a broad query, making it difficult for users to browse or to identify relevant information. Clustering methods can be used to automatically group the retrieved documents into a list of meaningful categories, as is achieved by e.g. open source software such as Carrot2.
+	” \cite{document clustering}
+	“Agglomerative hierarchical clustering and K-means are two clustering techniques that are commonly used for document clustering. Agglomerative hierarchical clustering is often portrayed as 'better' than K-means, although slower. “ \cite{Doc_clust_techniques}
 	
+	\item[HPC] 
+	"High-performance computing (HPC) is the use of parallel processing for running advanced application programs efficiently, reliably and quickly. The term applies especially to systems that function above a teraflop or 1012 floating-point operations per second. The term HPC is occasionally used as a synonym for supercomputing, although technically a supercomputer is a system that performs at or near the currently highest operational rate for computers. Some supercomputers work at more than a petaflop or 1015 floating-point operations per second.” \cite{hpc_def} This includes “using the world's fastest and largest computers to solve large problems.” \cite{parallel_comp_lawrence_nat_lab}
+	“High Performance Computing most generally refers to the practice of aggregating computing power in a way that delivers much higher performance than one could get out of a typical desktop computer or workstation in order to solve large problems in science, engineering, or business.” \cite{hpc}
 	
 \end{description}
 
@@ -163,8 +170,6 @@ En este caso, decidimos hacer que la agrupación de documentos sea mediante el u
 %------------------------------------------------
 
 \section{Análisis y Diseño (PCAM)}
-
-\subsection{Análisis y Diseño:}
 
 \paragraph{Particionamiento:}
 Esta característica fue tenida en cuenta en el momento de realizar el conteo de palabras ya que cada nodo puede realizarlo sobre un grupo diferente de datos sin depender del conteo de los demás nodos. 
@@ -267,17 +272,32 @@ Statistics How To. (2017). Jaccard Index / Similarity Coefficient. [online] [Acc
 \href{http://www.statisticshowto.com/jaccard-index/}{Available clicking here}  [Accessed 22 Oct. 2017].
 
 
-\bibitem{DISENO DE ALGORITMOS PARALELOS}
-En el texto: (cs.buap, 2017)
-Bibliografía: cs.buap. (2017). Diseño de algoritmos paralelos. [online] \href{https://www.cs.buap.mx/~mtovar/doc/ProgConc/ProgramacionParalela.pdf}{Available clicking here} [Accessed 21 Oct. 2017].
-\item cs.fit.edu. (2017). \textit{A Comparison of Document Clustering Techniques.} [online]  \href{http://cs.fit.edu/~pkc/classes/ml-internet/papers/steinbach00tr.pdf}{Available clicking here} [Accessed 18 Oct. 2017].
-
 \bibitem{document clustering}
 En.wikipedia.org. (2017). Document clustering. [online] \href{https://en.wikipedia.org/wiki/Document_clustering}{Available clicking here} [Accessed 22 Oct. 2017].
 
 \bibitem{Doc_clust_techniques} 
 Glaros.dtc.umn.edu. (2017). A Comparison of Document Clustering Techniques | Karypis Lab. [online] \href{http://glaros.dtc.umn.edu/gkhome/node/157}{Available clicking here} [Accessed 22 Oct. 2017].
+
+\bibitem{hpc} 
+insideHPC. (2017). What is high performance computing? - insideHPC. [online] \href{https://insidehpc.com/hpc-basic-training/what-is-hpc/}{Available clicking here}  [Accessed 22 Oct. 2017].
+
+\bibitem{hpc_def} 
+SearchDataCenter. (2017). What is high-performance computing (HPC)? - Definition from WhatIs.com. [online] 
+\href{http://searchdatacenter.techtarget.com/definition/high-performance-computing-HPC}{Available clicking here}   [Accessed 22 Oct. 2017].
+
+
+\bibitem{parallel_comp_lawrence_nat_lab} 
+Computing.llnl.gov. (2017). Introduction to Parallel Computing. [online] \href{https://computing.llnl.gov/tutorials/parallel_comp/}{Available clicking here}  [Accessed 22 Oct. 2017].
+
+
+\bibitem{DISENO DE ALGORITMOS PARALELOS}
+En el texto: (cs.buap, 2017)
+Bibliografía: cs.buap. (2017). Diseño de algoritmos paralelos. [online] \href{https://www.cs.buap.mx/~mtovar/doc/ProgConc/ProgramacionParalela.pdf}{Available clicking here} [Accessed 21 Oct. 2017].
+
+\bibitem cs.fit.edu. (2017). \textit{A Comparison of Document Clustering Techniques.} [online]  \href{http://cs.fit.edu/~pkc/classes/ml-internet/papers/steinbach00tr.pdf}{Available clicking here} [Accessed 18 Oct. 2017].
+
 \end{thebibliography}
+
 
 %----------------------------------------------------------------------------------------
 
